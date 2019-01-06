@@ -51,8 +51,15 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
+const router = require('./routes/index');
+app.use('/', router);
+
+
+// all routes below this will be protected- protected routes in index.js file
 const index = require('./routes/index');
 app.use('/', index);
+const auth = require('./routes/auth');
+app.use('/', auth);
 
 
 module.exports = app;
